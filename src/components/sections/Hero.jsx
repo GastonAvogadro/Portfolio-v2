@@ -20,8 +20,8 @@ export default function Hero() {
         </h1>
 
         <p className="text-lg text-gray-300 max-w-md opacity-0 animate-fade-in-up tracking-wide [animation-delay:1.5s]">
-          Frontend developer focused on performance, A/B testing, and scalable React &
-          Shopify experiences.
+          Frontend developer specialized in React/Next.js and Shopify. Experienced in A/B
+          testing and performance optimization.
         </p>
 
         <a
