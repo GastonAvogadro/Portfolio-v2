@@ -3,9 +3,9 @@ import CursorGlowEffect from "@/components/ui/CursorGlowEffect";
 import "./globals.css";
 
 const cabin = Cabin({
-  subsets: ['latin'],
-  weight: ['400', '700'],
-  display: 'swap',
+  subsets: ["latin"],
+  weight: ["400", "700"],
+  display: "swap",
 });
 
 export const metadata = {
@@ -16,9 +16,8 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body
-        className={`${cabin.className}`}
-      >
+      <body className={`${cabin.className}`}>
+        <CursorGlowEffect />
         {children}
       </body>
     </html>
