@@ -1,61 +1,56 @@
-"use client";
-
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 import Image from "next/image";
 
 export default function Modal({ project, onClose }) {
-  const [isVisible, setIsVisible] = useState(false);
-
   useEffect(() => {
-    const timeout = setTimeout(() => setIsVisible(true), 10); // Delay for fade-in
-    const handleKey = (e) => {
-      if (e.key === "Escape") onClose();
-    };
+    const handleKey = (e) => e.key === "Escape" && onClose();
     window.addEventListener("keydown", handleKey);
-    return () => {
-      clearTimeout(timeout);
-      window.removeEventListener("keydown", handleKey);
-    };
+    return () => window.removeEventListener("keydown", handleKey);
   }, [onClose]);
-
-  const handleClose = () => {
-    setIsVisible(false);
-    setTimeout(onClose, 300);
-  };
 
   return (
     <div
-      className={`fixed inset-0 z-50 flex items-center justify-center px-4 transition-opacity duration-300 ${
-        isVisible ? "bg-black/80 backdrop-blur-md opacity-100" : "opacity-0"
-      }`}
-      onClick={handleClose}
+      className="fixed inset-0 z-50 flex items-center justify-center bg-black/80 backdrop-blur-md animate-fade-in"
+      onClick={onClose}
     >
       <div
-        className={`relative bg-neutral-900 max-w-2xl w-full rounded-xl overflow-hidden shadow-xl transform transition-all duration-300 ${
-          isVisible ? "scale-100 opacity-100" : "scale-95 opacity-0"
-        }`}
+        className="relative bg-neutral-900 max-w-2xl w-full rounded-xl overflow-hidden shadow-lg"
         onClick={(e) => e.stopPropagation()}
       >
         <button
-          onClick={handleClose}
+          onClick={onClose}
           aria-label="Close modal"
-          className="absolute top-2 right-2 text-white hover:text-red-400 text-2xl font-bold z-10"
+          className="absolute top-3 right-3 text-white text-xl hover:text-cyan-400"
         >
           &times;
         </button>
 
-        <div className="relative w-full h-64">
-          <Image src={project.image} alt={project.title} fill className="object-cover" />
-        </div>
+        {project.video && (
+          <div className="w-full aspect-video relative">
+            <video
+              src={project.video}
+              className="w-full h-full object-cover"
+              autoPlay
+              muted
+              loop
+              playsInline
+            />
+          </div>
+        )}
 
-        <div className="p-6 space-y-3">
+        {!project.video && (
+          <div className="relative w-full h-64">
+            <Image
+              src={project.image_desktop}
+              alt={project.title}
+              fill
+              className="object-cover"
+            />
+          </div>
+        )}
+
+        <div className="p-6 space-y-3 text-white">
           <h4 className="text-2xl font-bold">{project.title}</h4>
-          <p className="text-sm text-gray-400">{project.type}</p>
-          <p>{project.description}</p>
-          {project.metrics && (
-            <p className="text-green-400 font-semibold">{project.metrics}</p>
-          )}
-          {project.role && <p className="text-sm text-gray-400 italic">{project.role}</p>}
           {project.stack && (
             <div className="flex flex-wrap gap-2 pt-2">
               {project.stack.map((tech) => (
@@ -68,6 +63,8 @@ export default function Modal({ project, onClose }) {
               ))}
             </div>
           )}
+          <p>{project.description}</p>
+
           {project.url && (
             <a
               href={project.url}
