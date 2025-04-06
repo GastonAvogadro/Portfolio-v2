@@ -7,7 +7,6 @@ export default function WorkCard({ project, onClick }) {
       className="cursor-pointer bg-white/5 rounded-lg overflow-hidden hover:shadow-xl transition-shadow"
     >
       <div className="relative w-full aspect-[4/3] bg-black">
-        {/* Desktop device */}
         <Image
           src={project.image_desktop}
           alt={`${project.title} (desktop)`}
@@ -16,7 +15,6 @@ export default function WorkCard({ project, onClick }) {
           sizes="(max-width: 768px) 100vw, 33vw"
         />
 
-        {/* Mobile device (overlay) */}
         <div className="absolute bottom-2 left-2 w-1/3 max-w-[100px]">
           <Image
             src={project.image_mobile}
