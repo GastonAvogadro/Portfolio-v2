@@ -10,7 +10,7 @@ export default function Modal({ project, onClose }) {
 
   return (
     <div
-      className="fixed inset-0 z-50 flex items-center justify-center bg-black/80 backdrop-blur-md animate-fade-in"
+      className="fixed inset-0 z-50 flex items-center justify-center bg-black/80 backdrop-blur-md animate-fade-in max-w-[90%] mx-auto"
       onClick={onClose}
     >
       <div
@@ -26,7 +26,7 @@ export default function Modal({ project, onClose }) {
         </button>
 
         {project.video && (
-          <div className="w-full aspect-video relative">
+          <div className="w-full relative">
             <video
               src={project.video}
               className="w-full h-full object-cover"

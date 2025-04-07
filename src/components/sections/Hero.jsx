@@ -9,9 +9,8 @@ export default function Hero() {
       <div className="absolute bottom-20 right-20 w-80 h-80 bg-blue-500 opacity-20 blur-[100px] rounded-full mix-blend-screen z-0" />
       <div className="absolute top-1/2 left-1/8 w-40 h-40 bg-purple-400 opacity-15 blur-2xl rounded-full mix-blend-screen z-0" />
 
-      {/* Main content */}
       <div className="relative z-10 max-w-4xl mx-auto text-left space-y-6">
-        <h1 className="text-7xl font-bold text-black flex gap-4 animate-neon">
+        <h1 className="text-5xl lg:text-7xl font-bold text-black flex gap-4 animate-neon">
           <span className="opacity-0 animate-fade-in-up [animation-delay:0.2s]">Hi,</span>
           <span className="opacity-0 animate-fade-in-up [animation-delay:0.6s]">I'm</span>
           <span className="opacity-0 animate-fade-in-up [animation-delay:1s]">
@@ -19,13 +18,13 @@ export default function Hero() {
           </span>
         </h1>
 
-        <p className="text-lg text-gray-300 max-w-md opacity-0 animate-fade-in-up tracking-wide [animation-delay:1.5s]">
+        <p className="text-md lg:text-lg text-gray-300 max-w-md opacity-0 animate-fade-in-up tracking-wide [animation-delay:1.5s]">
           Frontend developer specialized in React/Next.js and Shopify. Experienced in A/B
           testing and performance optimization.
         </p>
 
         <a
-          href="#"
+          href="#works"
           className="inline-block px-6 py-3 rounded-xl bg-[#004d57] -white text-lg font-medium shadow-md transition hover:bg-[#056875] focus:outline-none focus:ring-2 focus:ring-cyan-400 focus:ring-offset-2 focus:ring-offset-black opacity-0 animate-fade-in-up [animation-delay:2s]"
         >
           View my work

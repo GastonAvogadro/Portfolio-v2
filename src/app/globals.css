@@ -5,4 +5,5 @@
 html {
   --cursor-x: 50%;
   --cursor-y: 50%;
+  scroll-behavior: smooth;
 }
