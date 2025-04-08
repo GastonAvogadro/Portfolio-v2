@@ -33,8 +33,9 @@ export const worksData = [
     type: "Shopify Redesign",
     image_mobile: "/images/projects/areyougoldn-mobile.webp",
     image_desktop: "/images/projects/areyougoldn-desktop.webp",
-    video: '/videos/areyougoldn-video.mp4',
-    shortDescription: "Redesigned product page for a smoother user experience by reducing visual clutter, improving content hierarchy, and enhancing image navigation for better engagement.",
+    video: "/videos/areyougoldn-video.mp4",
+    shortDescription:
+      "Redesigned product page for a smoother user experience by reducing visual clutter, improving content hierarchy, and enhancing image navigation for better engagement.",
     description:
       "I worked on the redesign of GoldN’s product pages, which originally contained large blocks of dense information that caused cognitive overload and distracted users from key calls to action. To improve the user experience and drive conversions, I implemented collapsible accordions to organize the information more efficiently. This helped streamline the content hierarchy and guide users more clearly toward secondary sections like reviews and related products. Additionally, the image slider was redesigned to feel more intuitive and mobile-friendly, enhancing product interaction and clarity across devices.",
     stack: ["Shopify", "Liquid", "JavaScript", "CSS"],
@@ -46,28 +47,30 @@ export const worksData = [
     type: "Shopify Redesign",
     image_mobile: "/images/projects/maxpro-mobile.webp",
     image_desktop: "/images/projects/maxpro-desktop.webp",
-    video: '/videos/maxpro-video.mp4',
-    shortDescription: "Full redesign of the product page with a modern UI, an optimized image gallery, and clearer CTAs to improve user interaction and boost conversions.",
+    video: "/videos/maxpro-video.mp4",
+    shortDescription:
+      "Full redesign of the product page with a modern UI, an optimized image gallery, and clearer CTAs to improve user interaction and boost conversions.",
     description:
       "I led the redesign of MaxPro's product pages with the goal of creating a more visual and engaging experience for users. One of the main improvements was the introduction of a clearer, more intuitive image gallery that highlights all the product features at a glance. The UI was also modernized to better align with the brand, featuring updated typography, spacing, and layouts. Special focus was placed on optimizing calls to action, ensuring they stood out visually to boost purchase intent and improve the overall shopping journey.",
     stack: ["Shopify", "Liquid", "JavaScript", "CSS"],
     url: "https://www.maxprohair.com/products/max-pro-silk-brush",
   },
   {
-    id: "drift-abtest",
-    title: "Homepage Test — Drift Sand Table",
+    id: "gaudium",
+    title: "Homepage gallery redesign",
     type: "A/B Test",
-    image_mobile: "https://picsum.photos/400",
-    image_desktop: "https://picsum.photos/400",
-    video: null,
-    shortDescription: "Tested hero layout and CTA clarity.",
+    image_mobile: "/images/projects/gaudium-mobile.webp",
+    image_desktop: "/images/projects/gaudium-desktop.webp",
+    video: "/videos/gaudium-video.mp4",
+    shortDescription:
+      "Redesigned homepage gallery with a modern UI, optimized image slider, and clearer CTAs to improve user experience and boost conversions.",
     description:
-      "Ran an A/B test on the homepage hero section. Variant B featured a new CTA position and visual hierarchy. Resulted in a 12% uplift in click-through rate.",
+      "This A/B test focused on improving the product cards in the homepage by reorganizing key information and enhancing the UI. The most impactful update was the introduction of an image slider within each card, allowing users to preview all dishes included in a menu without needing to navigate to individual product pages. This small UX change significantly improved the browsing experience, resulting in a strong uplift in both conversion rate (CVR) and average order value (AOV). Due to its success, the variant was quickly implemented in the store.",
     stack: ["Convert", "JavaScript", "CSS"],
     url: null,
   },
   {
-    id: "drift-abtest-2",
+    id: "try-stiles",
     title: "Homepage Test — Drift Sand Table",
     type: "A/B Test",
     image_mobile: "https://picsum.photos/400",
