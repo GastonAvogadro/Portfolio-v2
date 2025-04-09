@@ -67,19 +67,20 @@ export const worksData = [
     description:
       "This A/B test focused on improving the product cards in the homepage by reorganizing key information and enhancing the UI. The most impactful update was the introduction of an image slider within each card, allowing users to preview all dishes included in a menu without needing to navigate to individual product pages. This small UX change significantly improved the browsing experience, resulting in a strong uplift in both conversion rate (CVR) and average order value (AOV). Due to its success, the variant was quickly implemented in the store.",
     stack: ["Convert", "JavaScript", "CSS"],
-    url: null,
+    url: "https://gaudium.dk/",
   },
   {
     id: "try-stiles",
-    title: "Homepage Test — Drift Sand Table",
+    title: "Custom product bundling in Cart",
     type: "A/B Test",
-    image_mobile: "https://picsum.photos/400",
-    image_desktop: "https://picsum.photos/400",
-    video: null,
-    shortDescription: "Tested hero layout and CTA clarity.",
+    image_mobile: "/images/projects/try-stiles-mobile.webp",
+    image_desktop: "/images/projects/try-stiles-desktop.webp",
+    video: "/videos/try-stiles-video.mp4",
+    shortDescription:
+      "Improved cart UX by bundling product variants into a single, easy-to-understand item—driving higher conversions.",
     description:
-      "Ran an A/B test on the homepage hero section. Variant B featured a new CTA position and visual hierarchy. Resulted in a 12% uplift in click-through rate.",
+      "This A/B test addressed a major UX issue: one of the store’s main products—a customizable crossword—added multiple letter variants as separate items in the cart, making it confusing and overwhelming for users. I implemented a logic that grouped all letter variants into a single bundled product, significantly simplifying the cart experience. The test resulted in a notable increase in both conversion rate and average order value, leading to its immediate implementation on the live store.",
     stack: ["Convert", "JavaScript", "CSS"],
-    url: null,
+    url: "https://trystiles.com/",
   },
 ];
