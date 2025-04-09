@@ -4,7 +4,7 @@ export default function WorkCard({ project, onClick }) {
   return (
     <div
       onClick={onClick}
-      className="cursor-pointer bg-white/5 rounded-lg overflow-hidden hover:shadow-xl transition-shadow"
+      className="cursor-pointer bg-white/5 rounded-lg max-w-md 2xl:max-w-2xl overflow-hidden hover:shadow-xl transition-shadow"
     >
       <div className="relative w-full aspect-[4/3] bg-black">
         <Image
