@@ -10,19 +10,19 @@ export default function Modal({ project, onClose }) {
 
   return (
     <div
-      className="fixed inset-0 z-50 flex items-center justify-center bg-black/80 backdrop-blur-md animate-fade-in max-w-[90%] mx-auto"
+      className="fixed inset-0 z-50 flex items-center justify-center bg-black/80 backdrop-blur-md animate-fade-in mx-auto"
       onClick={onClose}
     >
       <div
-        className="relative bg-neutral-900 max-w-2xl w-full rounded-xl overflow-hidden shadow-lg"
+        className="relative bg-neutral-900 max-w-[90%] lg:max-w-2xl w-full rounded-xl overflow-hidden shadow-lg"
         onClick={(e) => e.stopPropagation()}
       >
         <button
           onClick={onClose}
           aria-label="Close modal"
-          className="absolute top-3 right-3 text-white text-xl hover:text-cyan-400"
+          className="absolute top-3 right-3 hover:opacity-70 z-10 text-4xl"
         >
-          &times;
+          <img src="/images/icons/cross-circle.svg" alt="Close modal" className="w-6 h-6" />
         </button>
 
         {project.video && (

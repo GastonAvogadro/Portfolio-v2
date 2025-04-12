@@ -17,7 +17,7 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className={`${cabin.className}`}>
+      <body className={`${cabin.className} bg-black`}>
         <CursorGlowEffect />
         {children}
       </body>

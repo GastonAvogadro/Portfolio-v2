@@ -8,7 +8,7 @@ export default function Works() {
   const categories = priorityOrder.filter((type) => worksData.some((w) => w.type === type));
 
   return (
-    <section id="my-work" className="bg-black text-white py-16 px-12">
+    <section id="my-work" className="text-white py-16 px-12 max-w-screen-2xl mx-auto">
       <h2 className="text-4xl font-bold mb-12 text-center">My Work</h2>
 
       {categories.map((category) => (
