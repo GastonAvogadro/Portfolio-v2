@@ -1,9 +1,20 @@
 "use client";
 
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 
 export default function CursorGlowEffect() {
+  const [enabled, setEnabled] = useState(false);
+
   useEffect(() => {
+    const mediaQuery = window.matchMedia("(hover: hover) and (pointer: fine)");
+    if (mediaQuery.matches) {
+      setEnabled(true);
+    }
+  }, []);
+
+  useEffect(() => {
+    if (!enabled) return;
+    
     let x = 0;
     let y = 0;
     let raf;
@@ -20,7 +31,9 @@ export default function CursorGlowEffect() {
 
     window.addEventListener("mousemove", handleMouseMove);
     return () => window.removeEventListener("mousemove", handleMouseMove);
-  }, []);
+  }, [enabled]);
+
+  if (!enabled) return null;
 
   return (
     <div className="pointer-events-none fixed inset-0 z-[1]">
