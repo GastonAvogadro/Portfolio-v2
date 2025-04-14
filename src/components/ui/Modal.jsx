@@ -1,11 +1,17 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import Image from "next/image";
 
 export default function Modal({ project, onClose }) {
+  const [videoLoaded, setVideoLoaded] = useState(false);
+
   useEffect(() => {
     const handleKey = (e) => e.key === "Escape" && onClose();
     window.addEventListener("keydown", handleKey);
-    return () => window.removeEventListener("keydown", handleKey);
+    document.body.style.overflow = "hidden";
+    return () => {
+      window.removeEventListener("keydown", handleKey);
+      document.body.style.overflow = "";
+    };
   }, [onClose]);
 
   return (
@@ -22,11 +28,24 @@ export default function Modal({ project, onClose }) {
           aria-label="Close modal"
           className="absolute top-3 right-3 hover:opacity-70 z-10 text-4xl"
         >
-          <img src="/images/icons/cross-circle.svg" alt="Close modal" className="w-6 h-6" />
+          <img
+            src="/images/icons/cross-circle.svg"
+            alt="Close modal"
+            className="w-6 h-6"
+          />
         </button>
 
         {project.video && (
-          <div className="w-full relative">
+          <div className="w-full relative aspect-video">
+            {!videoLoaded && (
+              <div className="absolute inset-0 flex items-center justify-center z-10 bg-black/50">
+                <img
+                  src="images/icons/loading-circle.svg"
+                  alt="Loading video"
+                  className="animate-spin w-12 h-12"
+                />
+              </div>
+            )}
             <video
               src={project.video}
               className="w-full h-full object-cover"
@@ -34,6 +53,7 @@ export default function Modal({ project, onClose }) {
               muted
               loop
               playsInline
+              onCanPlayThrough={() => setVideoLoaded(true)}
             />
           </div>
         )}
